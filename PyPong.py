@@ -48,9 +48,9 @@ while True:
     
     pressed = pygame.key.get_pressed()
     
-    if pressed[pygame.K_a] or pressed[pygame.K_LEFT] and paddle_rect.x > vel:
+    if pressed[pygame.K_a] and paddle_rect.x > vel:
         paddle_rect.x -= vel
-    if pressed[pygame.K_d] or pressed[pygame.K_RIGHT] and paddle_rect.x < 800 - vel - paddle_width:
+    if pressed[pygame.K_d] and paddle_rect.x < 800 - vel - paddle_width:
         paddle_rect.x += vel
     
     ball_rect.move_ip(ball_x_speed, ball_y_speed)
