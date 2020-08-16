@@ -10,11 +10,25 @@ pygame.display.set_caption('PyPong')
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-VIOLET = (150, 0, 255)
-MINT = (0, 255, 187)
-ORANGE = (255, 153, 0)
-RED = (227, 30, 30)
-colors = [BLACK, WHITE, VIOLET, MINT, ORANGE, RED]
+
+colors = [
+
+    (0, 0, 0), # black
+    (255, 255, 255), # white
+    (255, 51, 51), # red
+    (255, 153, 51), # orange
+    (255, 255, 51), # yellow
+    (153, 255, 51), # lime
+    (51, 255, 51), # green
+    (51, 255, 153), # green/blue
+    (51, 255, 255), # blue
+    (51, 51 ,255), # navy
+    (153, 51, 255), # purple
+    (255, 51, 255), # pink
+    (255, 51, 153), # pinker
+    (160 ,160 ,160) # gray
+]
+
 
 background = BLACK
 interface = WHITE
@@ -46,6 +60,9 @@ ball_rect.y = 400
 # points
 score = '0'
 font = pygame.font.Font('freesansbold.ttf', 64)
+
+#def themes():
+    
 
 def print_score():
     txt = font.render(score, True, interface)
@@ -112,10 +129,12 @@ while True:
         ball_y_speed *= -1
         ball_rect.bottom = paddle_rect.top
         score = str(int(score) + 1)
-#        ball_x_speed = ball_x_speed + 1
-#        ball_y_speed = ball_y_speed + 1
-#        print(ball_x_speed, ball_y_speed)
-
+        """
+        ball_x_speed = ball_x_speed + 1
+        ball_y_speed = ball_y_speed + 1
+        print(ball_x_speed, ball_y_speed)
+        
+        """
     win.fill(background)
     
     print_score()
